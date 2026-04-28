@@ -128,6 +128,11 @@
             border: 1px solid rgba(212, 163, 115, 0.2);
         }
 
+        /* Sadece metin olan öğeler için daha dar padding */
+        .text-only-item {
+            padding: 12px 20px;
+        }
+
         .item-info { display: flex; flex-direction: column; gap: 5px; }
         .item-name { font-weight: bold; font-size: 16px; }
         .item-price { color: var(--altin-bal); font-weight: bold; font-size: 15px; }
@@ -273,28 +278,32 @@
         <button class="view-btn" onclick="open3D('ME4143~1.STL.glb', 'Kola')">👁 Görüntüle</button>
     </div>
 
-     <div class="menu-list-item">
-        <div class="item-info">
-            <span class="item-name">Çay</span>
-            <span class="item-price">30₺</span>
-        </div>
-        <button class="view-btn" onclick="open3D('Çay.glb', 'Çay')">👁 Görüntüle</button>
-    </div>
-
-      <div class="menu-list-item">
-        <div class="item-info">
-            <span class="item-name">Filtre Kahve</span>
-            <span class="item-price">135₺</span>
-        </div>
-        <button class="view-btn" onclick="open3D('Filtre Kahve.glb', 'Filtre Kahve')">👁 Görüntüle</button>
-    </div>
-
     <div class="menu-list-item">
         <div class="item-info">
             <span class="item-name">Ayran</span>
             <span class="item-price">45₺</span>
         </div>
         <button class="view-btn" onclick="open3D('Meshy_AI_Copper_Mug_with_Mint__0428174453_generate.glb.glb', 'Ayran')">👁 Görüntüle</button>
+    </div>
+
+    <div class="menu-list-item text-only-item">
+        <span class="item-name">Filtre Kahve</span>
+        <span class="item-price">135₺</span>
+    </div>
+
+    <div class="menu-list-item text-only-item">
+        <span class="item-name">Çay</span>
+        <span class="item-price">30₺</span>
+    </div>
+    
+    <div class="menu-list-item text-only-item">
+        <span class="item-name">Soda</span>
+        <span class="item-price">30₺</span>
+    </div>
+
+    <div class="menu-list-item text-only-item">
+        <span class="item-name">Su</span>
+        <span class="item-price">15₺</span>
     </div>
 
 </div>
@@ -316,10 +325,10 @@
     // Karşılama ekranını kapatma fonksiyonu
     function startMenu() {
         const introScreen = document.getElementById('intro-screen');
-        introScreen.style.opacity = "0"; // Yavaşça kaybolma efekti
+        introScreen.style.opacity = "0"; 
         setTimeout(() => {
-            introScreen.style.visibility = "hidden"; // Tamamen gizle
-        }, 500); // 0.5 saniye sonra gizle
+            introScreen.style.visibility = "hidden"; 
+        }, 500); 
     }
 
     // 3D Model açma fonksiyonu
